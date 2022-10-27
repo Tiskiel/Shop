@@ -1,4 +1,4 @@
-package Products;
+package Shop;
 
 import java.time.LocalDate;
 

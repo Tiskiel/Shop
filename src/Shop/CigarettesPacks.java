@@ -1,4 +1,4 @@
-package Products;
+package Shop;
 
 public class CigarettesPacks extends Products implements ILegalAge{
 

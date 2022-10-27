@@ -1,4 +1,4 @@
-package Products;
+package Shop;
 
 public abstract class Products {
     private String brand;
