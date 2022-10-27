@@ -2,7 +2,7 @@ package Shop;
 
 public class Main {
 
-    Market market = Market.getInstance();
+    Market instance = Market.getInstance();
 
     Tomatos tomatos1 = new Tomatos("Noir de crimée", 15);
     Tomatos tomatos2 = new Tomatos("Coeur de boeuf", 8);
@@ -12,5 +12,4 @@ public class Main {
 
     CigarettesPacks cp1 = new CigarettesPacks("Malborro", 15);
     CigarettesPacks cp2 = new CigarettesPacks("Gauloise", 18);
-
 }

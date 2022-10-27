@@ -21,7 +21,7 @@ public class Market {
 
     }
 
-    public static String ticket(int ageCustomer, Products... products) {
+    public String ticket(int ageCustomer, Products... products) {
 
         List<String> basket = new ArrayList<String>();
 
@@ -40,7 +40,10 @@ public class Market {
                         basket.add("Product : "
                                 + product.getBrand() + " : "
                                     + product.getPrice()
-                                        + " perishable date : " + ((IPerishable) product).getDatePeremtion() + "\n");
+                                        + " perishable date : "
+                                            + "<--"
+                                                + ((IPerishable) product).getDatePeremtion()
+                                                    + "\n");
 
                     }
 
@@ -51,14 +54,20 @@ public class Market {
                         basket.add("Product : "
                                 + product.getBrand() + " : "
                                     + product.getPrice()
-                                        + " perishable date : " + ((IPerishable) product).getDatePeremtion() + "\n");
+                                        + " perishable date : "
+                                            + ((IPerishable) product).getDatePeremtion()
+                                                + "<--"
+                                                    + "\n");
 
                     }
 
                     basket.add("Product : "
                             + product.getBrand() + " : "
                                 + product.getPrice()
-                                    + " perishable date : " + ((IPerishable) product).getDatePeremtion() + "\n");
+                                    + " perishable date : "
+                                        + "<--"
+                                            + ((IPerishable) product).getDatePeremtion()
+                                                + "\n");
 
                 } else {
 
@@ -68,7 +77,8 @@ public class Market {
                         basket.add("Product : "
                                 + product.getBrand() + " : "
                                     + product.getPrice()
-                                        + "\n");
+                                        + "<--"
+                                            + "\n");
 
                         total += product.getPrice();
                     }
@@ -81,7 +91,8 @@ public class Market {
                                 + product.getBrand() + " : "
                                     + product.getPrice()
                                         + " : free alcool beer "
-                                            + "\n");
+                                            + "<--"
+                                                + "\n");
 
                         total += product.getPrice();
                     }
@@ -89,7 +100,8 @@ public class Market {
                         basket.add("Product : "
                                 + product.getBrand() + " : "
                                     + product.getPrice()
-                                        + "\n");
+                                        + "<--"
+                                            + "\n");
 
                         total += product.getPrice();
                 }
@@ -108,7 +120,8 @@ public class Market {
                 basket.add("Product : "
                         + product.getBrand() + " : "
                             + product.getPrice()
-                                + "\n");
+                                + "<--"
+                                    + "\n");
 
                 total += product.getPrice();
 
