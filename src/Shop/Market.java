@@ -4,21 +4,28 @@ package Shop;
 import com.sun.source.tree.LiteralTree;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Market {
 
     private static Market instance;
+    public String value;
 
-    public static Market getInstance() {
+    public static Market getInstance(String value) {
         if (instance == null)
-            instance = new Market();
+            instance = new Market(value);
         return instance;
     }
 
-    private Market() {
-
+    private Market(String value) {
+        try {
+            Thread.sleep(1000);
+        }  catch (InterruptedException ex) {
+            ex.printStackTrace();
+        }
+        this.value = value;
     }
 
     public String ticket(int ageCustomer, Products... products) {
@@ -32,18 +39,17 @@ public class Market {
             if (product instanceof IPerishable) {
 
                 if ((((IPerishable) product).getDatePeremtion().getDayOfMonth() < LocalDate.now().getDayOfMonth())
-                        && (((IPerishable) product).getDatePeremtion().getMonth() != LocalDate.now().getMonth())) {
+                        && (((IPerishable) product).getDatePeremtion().getMonthValue() < LocalDate.now().getMonthValue())) {
 
                     if (product instanceof Beers
                             && ((Beers) product).isAuthorized(ageCustomer)) {
 
                         basket.add("Product : "
                                 + product.getBrand() + " : "
-                                    + product.getPrice()
+                                    + product.getPrice() + "€"
                                         + " perishable date : "
-                                            + "<--"
-                                                + ((IPerishable) product).getDatePeremtion()
-                                                    + "\n");
+                                            + ((IPerishable) product).getDatePeremtion()
+                                                + "\n");
 
                     }
 
@@ -53,21 +59,19 @@ public class Market {
 
                         basket.add("Product : "
                                 + product.getBrand() + " : "
-                                    + product.getPrice()
+                                    + product.getPrice() + "€"
                                         + " perishable date : "
                                             + ((IPerishable) product).getDatePeremtion()
-                                                + "<--"
-                                                    + "\n");
+                                                + "\n");
 
                     }
 
                     basket.add("Product : "
                             + product.getBrand() + " : "
-                                + product.getPrice()
+                                + product.getPrice() + "€"
                                     + " perishable date : "
-                                        + "<--"
-                                            + ((IPerishable) product).getDatePeremtion()
-                                                + "\n");
+                                        + ((IPerishable) product).getDatePeremtion()
+                                            + "\n");
 
                 } else {
 
@@ -76,9 +80,8 @@ public class Market {
 
                         basket.add("Product : "
                                 + product.getBrand() + " : "
-                                    + product.getPrice()
-                                        + "<--"
-                                            + "\n");
+                                    + product.getPrice() + "€"
+                                        + "\n");
 
                         total += product.getPrice();
                     }
@@ -89,21 +92,24 @@ public class Market {
 
                         basket.add("Product : "
                                 + product.getBrand() + " : "
-                                    + product.getPrice()
+                                    + product.getPrice() + "€"
                                         + " : free alcool beer "
-                                            + "<--"
-                                                + "\n");
+                                            + "\n");
 
                         total += product.getPrice();
                     }
 
+                    if(product instanceof Tomatos) {
+
                         basket.add("Product : "
                                 + product.getBrand() + " : "
-                                    + product.getPrice()
-                                        + "<--"
-                                            + "\n");
+                                    + product.getPrice() + "€"
+                                        + "\n");
 
                         total += product.getPrice();
+                    }
+
+
                 }
             }
 
@@ -119,9 +125,8 @@ public class Market {
 
                 basket.add("Product : "
                         + product.getBrand() + " : "
-                            + product.getPrice()
-                                + "<--"
-                                    + "\n");
+                            + product.getPrice() + "€"
+                                + "\n");
 
                 total += product.getPrice();
 
@@ -129,17 +134,18 @@ public class Market {
 
 
         }
-        System.out.println("--------------------------------------------------");
-        System.out.println("-->                   TICKET                   <--");
-        System.out.println("--------------------------------------------------");
+        System.out.println("-----------------------------------------------------------------");
+        System.out.println("-->                           TICKET                          <--");
+        System.out.println("-----------------------------------------------------------------");
         for (String product : basket) {
             System.out.println("--> " + product);
         }
-        System.out.println("--> "+total+"                                      <--");
-        System.out.println("--------------------------------------------------");
-        System.out.println("-->          Thank you for your visit          <--");
-        System.out.println("--> "+LocalDate.now()+"                            <--");
-        System.out.println("--------------------------------------------------");
+        System.out.println("--> "+total+"€"+"                                                       <--");
+        System.out.println("-----------------------------------------------------------------");
+        System.out.println("-->                    Thank you for your visit               <--");
+        System.out.println("--> "+LocalDate.now()+" : "+LocalTime.now()+"                           <--");
+        System.out.println("-----------------------------------------------------------------");
         return "Here you are, your ticket !";
+
     }
 }

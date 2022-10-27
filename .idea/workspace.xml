@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec3b1189-f04b-483b-8bae-ba01752b4a0f" name="Changes" comment="Update class" />
+    <list default="true" id="ec3b1189-f04b-483b-8bae-ba01752b4a0f" name="Changes" comment="Update Market">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/Beers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/Beers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/Market.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/Market.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop/Products.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,6 +44,26 @@
     "jdk.selected.JAVA_MODULE": "corretto-17"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Shop.Main" />
+      <module name="Shop" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Shop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -54,7 +80,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666894425512</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Update Market">
+      <created>1666895166872</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1666895166872</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -71,6 +104,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
     <MESSAGE value="Update class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update class" />
+    <MESSAGE value="Update Market" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Market" />
   </component>
 </project>

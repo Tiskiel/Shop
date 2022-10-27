@@ -7,10 +7,11 @@ public class Beers extends Products implements IPerishable, ILegalAge{
     private int rateAlcool;
     private final LocalDate perishableDate;
 
-    public Beers(String brand, int price) {
+    public Beers(String brand, int price, int alcoolRate) {
         super(brand, price);
         LocalDate today = LocalDate.now();
         this.perishableDate = today.plusDays(5);
+        this.setRateAlcool(alcoolRate);
     }
 
     public int getRateAlcool() {
