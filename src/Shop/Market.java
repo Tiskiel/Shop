@@ -38,8 +38,7 @@ public class Market {
 
             if (product instanceof IPerishable) {
 
-                if ((((IPerishable) product).getDatePeremtion().getDayOfMonth() < LocalDate.now().getDayOfMonth())
-                        && (((IPerishable) product).getDatePeremtion().getMonthValue() < LocalDate.now().getMonthValue())) {
+                if (((IPerishable) product).getDatePeremtion().isBefore(LocalDate.now())) {
 
                     if (product instanceof Beers
                             && ((Beers) product).isAuthorized(ageCustomer)) {
